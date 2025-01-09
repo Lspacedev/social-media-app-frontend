@@ -1,0 +1,1208 @@
+* {
+  font-family: "Poppins", serif;
+}
+
+body,
+html {
+  width: 100%;
+  margin: 0;
+  background-color: gray;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+.App {
+  background-color: #900;
+}
+
+.register-btn {
+  background-color: #3772ff;
+  padding: 10px 90px;
+  font-size: 1.2rem;
+  border-radius: 25rem;
+  color: white;
+  outline: none;
+  border: none;
+}
+.register-btn:hover {
+  background-color: #1f62ff;
+  cursor: pointer;
+}
+.signin-btn {
+  border: 1px solid #e6e8e6;
+  background-color: transparent;
+  padding: 10px 90px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25rem;
+  color: #3772ff;
+  outline: none;
+}
+.signin-btn:hover {
+  background-color: #00030a;
+  cursor: pointer;
+}
+.guest-signin-btn {
+  border: 1px solid #e6e8e6;
+  background-color: transparent;
+  padding: 10px 64px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25rem;
+  color: #3772ff;
+  outline: none;
+}
+.guest-signin-btn:hover {
+  background-color: #00030a;
+  cursor: pointer;
+}
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(68, 68, 71, 0.6);
+  z-index: 2;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-close {
+  font-size: 2rem;
+  color: #e6e8e6;
+}
+
+.Signin {
+  margin: 0 auto 0 auto;
+  padding: 15px;
+  width: 30%;
+  height: 60%;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: black;
+}
+
+.Signin h3 {
+  color: #e6e8e6;
+  font-size: 2rem;
+}
+.Signin input {
+  width: 100%;
+  margin: 5px auto;
+  padding: 15px 0px;
+  background-color: black;
+  border: 0.1rem solid grey;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
+  color: #e6e8e6;
+}
+.Signin input:focus {
+  border: 1px solid #709bff;
+}
+.Signin input:focus::placeholder {
+  color: #3772ff;
+}
+.Signin button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.signin-form-div {
+  width: 70%;
+  margin: 5px auto;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form-div .form div label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.SignUp {
+  margin: 0 auto 0 auto;
+  padding: 15px;
+  width: 30%;
+  height: 75%;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: black;
+}
+
+.SignUp h3 {
+  color: #e6e8e6;
+  font-size: 2rem;
+}
+.SignUp input {
+  width: 100%;
+  margin: 5px auto;
+  padding: 15px 0px;
+  background-color: black;
+  border: 0.1rem solid grey;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
+  color: #e6e8e6;
+}
+.SignUp input:focus {
+  border: 1px solid #709bff;
+}
+.SignUp input:focus::placeholder {
+  color: #3772ff;
+}
+.SignUp button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.SignUp button:hover {
+  background-color: #e6e8e6;
+}
+.signup-form-div {
+  width: 70%;
+  margin: 5px auto;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form-div .form div label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Home {
+  height: 100%;
+  display: flex;
+  padding: 0px 300px;
+  overflow-y: auto;
+  background-color: black;
+}
+
+.SideNavigation {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 2;
+  padding-top: 100px;
+}
+
+.Feed .logo {
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Silkscreen, serif";
+  -webkit-text-stroke: 3px #e6e8e6;
+  padding: 10px 25px 10px 20px;
+  text-align: center;
+}
+.sideNavLink {
+  width: fit-content;
+  margin: 25px 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  padding: 10px 25px 10px 10px;
+  border-radius: 2rem;
+}
+.sideNavLink div {
+  color: #e6e8e6;
+  font-size: 1.7rem;
+}
+.sideNavLink .icon {
+  padding: 0px;
+  margin: 0px;
+}
+.sideNavLink:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+.sideNavLink.logout {
+  align-self: auto;
+}
+.Feed {
+  flex: 2;
+  position: relative;
+  height: fit-content;
+}
+.feed-header {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+.feed-header .logo {
+  flex: 2;
+  font-family: "Silkscreen, serif";
+}
+.all-following {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  color: white;
+}
+.all-following div {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+}
+.all-following div:hover {
+  background-color: rgb(25, 25, 25);
+}
+.all-following div.currentTab {
+  background: rgba(0, 0, 0, 0.3);
+}
+.Search {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 2;
+  padding: 100px 25px 0px 25px;
+}
+.CreatePost {
+  margin-top: 15px;
+  border: 0.1rem solid rgb(230, 232, 230, 0.2);
+  border-radius: 10px;
+  background-color: rgb(5, 5, 5);
+}
+.CreatePost .textArea {
+  flex: 2;
+  height: 150px;
+  border-radius: 10px;
+}
+.CreatePost .textArea textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  resize: none;
+  color: #e6e8e6;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(5, 5, 5);
+  border-radius: 10px 10px 0px 0px;
+}
+.CreatePost input {
+  color: grey;
+}
+.CreatePost input[type="file"] {
+}
+.CreatePost input[type="file"]::-webkit-file-upload-button,
+.CreatePost input[type="file"]::file-selector-button {
+  display: none;
+  width: 5%;
+  color: #3772ff;
+}
+.CreatePost label {
+  font-size: 1.4rem;
+  padding: 0px 15px;
+  cursor: pointer;
+}
+.CreatePost label .icon {
+  color: #3772ff;
+}
+.CreatePost .post-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+}
+
+.CreatePost .post-content button {
+  padding: 10px 80px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: "800";
+  cursor: pointer;
+  outline: none;
+}
+
+.Profile {
+  flex: 2;
+  height: fit-content;
+  width: 100vw;
+  display: "flex";
+  position: relative;
+  overflow-y: hidden;
+}
+
+.Profile .profile-content {
+  color: grey;
+  position: relative;
+}
+
+.Profile .banner {
+  background-color: grey;
+  flex: 2;
+  height: 250px;
+  width: 100%;
+  position: relative;
+}
+.banner img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner .profile-nav {
+  position: absolute;
+  height: 25%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.profile-nav button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.profile-nav .icon {
+  font-size: 2rem;
+  color: #e6e8e6;
+}
+
+.profile-pic {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  top: 170px;
+  left: 25px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.edit-profile {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.edit-profile .edit-btn {
+  cursor: pointer;
+  border: 1px solid #e6e8e6;
+  background-color: transparent;
+  color: #e6e8e6;
+  padding: 10px 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25rem;
+  outline: none;
+}
+.profile-info {
+  flex: 2;
+  color: gray;
+  margin: 100px 0px 0px 25px;
+}
+.profile-info div {
+  margin: 5px 0px;
+}
+.profile-info .username {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e6e8e6;
+}
+
+.profile-info .follows {
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.profile-tabs {
+  height: 60px;
+  display: flex;
+
+  color: gray;
+  border-bottom: 0.1rem solid rgb(230, 232, 230, 0.3);
+}
+
+.profile-tabs div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: fit-content;
+}
+.profile-tabs .tab:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+.profile-tabs .tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.currentTab {
+  border-bottom: 2px solid #1f62ff;
+}
+.update-form {
+  margin: 0 auto 0 auto;
+  padding: 25px;
+  width: 450px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: black;
+}
+
+.update-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.update-form input {
+  width: 100%;
+  margin: 5px auto;
+  padding: 15px 0px;
+  background-color: black;
+  border: 0.1rem solid grey;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
+  color: #e6e8e6;
+}
+.update-form input:focus {
+  border: 1px solid #709bff;
+}
+
+.update-form input:focus::placeholder {
+  color: #3772ff;
+}
+
+.update-inputs {
+  margin: 25px 0px;
+}
+
+.update-inputs label {
+  color: #e6e8e6;
+}
+
+.post-card {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border: 0.1rem solid rgb(230, 232, 230, 0.2);
+  margin: 10px 0px;
+  border-radius: 10px;
+  background-color: rgb(5, 5, 5);
+}
+
+.card-pic {
+  flex: 1;
+  background-color: navy;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.Profile .card-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.card-details {
+  flex: 4;
+}
+
+.card-username {
+  color: grey;
+}
+
+.card-post {
+  color: #e6e8e6;
+  margin: 15px 0px;
+  cursor: pointer;
+}
+.card-text {
+  height: 10%;
+  margin: 15px 0px 15px 15px;
+}
+.card-image {
+  width: 95%;
+  height: 450px;
+  margin: 0px auto;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.Profile .username-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 150px 0px 0px;
+  position: relative;
+  cursor: pointer;
+}
+.username-options button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.comments-likes {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 150px 0px 0px;
+}
+.post-comments {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.post-likes {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.options-modal {
+  position: absolute;
+  height: 50px;
+  width: 150px;
+  background-color: black;
+  box-shadow: 1px 2px 5px #bbb;
+  top: 25px;
+  right: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  flex: 1;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #e6e8e6;
+  padding: 0px 5px;
+}
+
+.option:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+
+.update-form .textArea {
+  flex: 2;
+  height: 150px;
+  margin-top: 25px;
+}
+.update-form .textArea textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  font-size: 16px;
+  resize: none;
+  border-top: 1px solid rgb(230, 232, 230, 0.4);
+  border-bottom: 1px solid rgb(230, 232, 230, 0.4);
+  color: #e6e8e6;
+  padding: 10px;
+}
+.Post {
+  flex: 2;
+  width: 100vw;
+  display: "flex";
+}
+
+.post-nav {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 2;
+}
+.post-nav button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.post-nav .icon {
+  font-size: 2rem;
+  color: #e6e8e6;
+}
+
+.post-nav button div {
+  color: #e6e8e6;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.Post .post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 0.1rem solid rgb(230, 232, 230, 0.3);
+}
+
+.card-pic-cont {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-pic-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.Post .comments-likes {
+  padding: 10px 0px;
+  border-bottom: 0.1rem solid rgb(230, 232, 230, 0.3);
+}
+
+.card-timestamp {
+  color: grey;
+  margin: 10px 0px;
+  font-size: 0.8rem;
+}
+
+.post-comment {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.post-comment .commentArea {
+  flex: 4;
+}
+.post-comment .commentArea textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  font-size: 16px;
+  resize: none;
+  color: #e6e8e6;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+.post-comment .comment-content {
+  flex: 1;
+}
+
+.post-comment .comment-content button {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: "800";
+  cursor: pointer;
+}
+.Post .post-card .username-options {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.Post .post-card .username-options .username {
+  color: #e6e8e6;
+}
+
+.comment-card {
+  display: flex;
+  gap: 10px;
+
+  padding: 15px;
+  border: 0.1rem solid rgb(230, 232, 230, 0.3);
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+.comment-card .username-options {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 150px 0px 0px;
+  position: relative;
+  cursor: pointer;
+}
+
+.comment-card .card-pic-cont {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.Inbox {
+  flex: 2;
+  height: 100vh;
+  width: 100vw;
+  display: "flex";
+  overflow-y: auto;
+}
+
+.msg-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0px 15px;
+  cursor: pointer;
+}
+
+.Message {
+  flex: 2;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+/* .SendMessage {
+  
+
+.SendMessage input {
+  flex: 5;
+  height: 100%;
+  padding: 0px 70px;
+  border-radius: 25px 0px 0px 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(29, 29, 29);
+  color: #e6e8e6;
+} */
+
+.SendMessage {
+  flex: 1;
+  width: 99%;
+  padding: 0px;
+  margin: 15px auto;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.SendMessage input[type="text"] {
+  width: 85%;
+  height: 100%;
+  padding: 15px 0px;
+  border-radius: 25px 0px 0px 25px;
+  border: none;
+  box-sizing: border-box;
+  margin: 0px;
+  font-size: 1.3rem;
+  background-color: rgb(29, 29, 29);
+  color: white;
+}
+.SendMessage button {
+  flex: 1;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  background-color: rgb(29, 29, 29);
+  border-radius: 0px 25px 25px 0px;
+  cursor: pointer;
+}
+
+.SendMessage input:focus {
+  border: 1px solid #709bff;
+}
+.SendMessage input:focus::placeholder {
+  color: #3772ff;
+}
+
+.texts {
+  flex: 14;
+  width: 95%;
+  height: 90%;
+  border-radius: 25px;
+  margin: 0px auto;
+  overflow-y: auto;
+}
+.texts .text {
+  width: fit-content;
+  max-width: 50%;
+}
+
+.left {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: auto;
+}
+
+.right {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+}
+
+.text-content.left {
+  background-color: white;
+  color: rgb(25, 25, 25);
+  width: fit-content;
+
+  padding: 25px;
+  box-shadow: 1px 1px 5px #bbb;
+  border-radius: 25px;
+}
+.text-content.right {
+  background-color: rgb(224, 245, 192);
+  color: rgb(25, 25, 25);
+
+  width: fit-content;
+
+  padding: 25px;
+  box-shadow: 1px 1px 5px #bbb;
+  border-radius: 25px;
+}
+.text-timestamp {
+  color: #e6e8e6;
+  font-size: 0.7rem;
+  color: gray;
+}
+.messages {
+  padding: 10px 0px;
+}
+.MsgContainer {
+  flex: 2;
+  background-color: rgb(25, 25, 25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  color: #e6e8e6;
+  margin: 5px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.SearchBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 5px;
+}
+.search-options {
+  display: flex;
+}
+.search-options p {
+  margin: 0px;
+}
+
+.Search .SearchBar input {
+  flex: 5;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(20, 20, 20);
+  color: #e6e8e6;
+  border: 1px solid transparent;
+}
+.SearchBar button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  flex: 1;
+  border-radius: 0px 25px 25px 0px;
+  background-color: rgb(20, 20, 20);
+  color: #e6e8e6;
+  cursor: pointer;
+}
+.SearchBar input:focus {
+  border: 1px solid #709bff;
+}
+.SearchBar input:focus::placeholder {
+  color: #3772ff;
+}
+
+.Search input[type="checkbox"] {
+  accent-color: #c70039;
+}
+
+.Search .tabs {
+  height: 5%;
+  display: flex;
+
+  color: #e6e8e6;
+  padding-top: 30px;
+}
+
+.Search .tabs div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+}
+.Search .tab:hover {
+  background-color: rgb(20, 20, 20);
+  cursor: pointer;
+}
+.Search .tabs .tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Search .current-tab {
+  border-bottom: 2px solid #1f62ff;
+}
+.Feed .post-card .username-options {
+  display: flex;
+  gap: 5px;
+  padding: 0px 150px 0px 0px;
+  position: relative;
+  cursor: pointer;
+}
+.Feed .post-card .username-options .username {
+  color: #e6e8e6;
+  font-weight: 600;
+}
+
+.Feed .card-pic-cont {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.Feed .card-pic-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.Profile .card-pic-cont {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.Profile .card-pic-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.Search .account-card {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+}
+.Search .card-pic-cont {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.Search .card-pic-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.Search .account-card .username-options .username {
+  color: #e6e8e6;
+  font-weight: 600;
+}
+
+.Search .account-card .card-details {
+  display: flex;
+  justify-content: space-between;
+}
+.unfollow-btn {
+  cursor: pointer;
+  border: 1px solid #e6e8e6;
+  background-color: #e6e8e6;
+  color: black;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 25rem;
+  outline: none;
+}
+
+.PostsSearch {
+  flex: 2;
+  padding: 0px;
+}
+.searchBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 5px;
+}
+
+.PostsSearch .searchBar input {
+  flex: 5;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(41, 41, 41);
+  color: #e6e8e6;
+}
+
+.searchBar input:focus {
+  border: 1px solid #709bff;
+}
+.searchBar input:focus::placeholder {
+  color: #3772ff;
+}
+
+.Notifications {
+  flex: 2;
+  padding: 15px 0px;
+}
+
+.notification-card {
+  color: #e6e8e6;
+  background-color: rgb(25, 25, 25);
+  margin: 15px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.notification-card-details {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 15px;
+}
+
+.notifs {
+  position: relative;
+}
+
+.notifs-count {
+  color: #1f62ff;
+  font-size: 1rem;
+  position: absolute;
+}
+
+.all-user-results {
+  background-color: black;
+  position: absolute;
+  top: 250px;
+  width: 90%;
+  min-height: 400px;
+
+  text-align: center;
+}
+
+.searchResults .card-pic-cont {
+  display: flex;
+  align-items: start;
+  padding-top: 25px;
+}
+.searchResults .card-pic-cont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.error {
+  padding: 0px;
+  margin: 0px;
+
+  font-size: 0.8rem;
+  color: #900;
+}
+
+@media (max-width: 768px) {
+  .Home {
+    padding: 0px;
+  }
+  .Feed {
+    flex: 1;
+  }
+  .Feed .post-card {
+    padding: 0px;
+    margin: 15px;
+  }
+  .Feed .card-pic-cont {
+    display: none;
+  }
+  .card-text {
+    margin: 0px;
+  }
+  .SideNavigation {
+    display: none;
+  }
+  .Search {
+    display: none;
+  }
+  .CreatePost .post-content {
+    flex-direction: column;
+  }
+  .CreatePost .post-content button {
+    padding: 5px;
+  }
+}
