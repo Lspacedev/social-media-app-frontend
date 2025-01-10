@@ -26,7 +26,7 @@ function Search() {
     })();
   }, []);
   useEffect(() => {
-    const socket = io.connect("http://localhost:3000");
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
 
     socket.on("post-created", (posts) => {
       setPosts(posts);
@@ -48,13 +48,16 @@ function Search() {
 
   async function getFeed() {
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}/feed`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/feed`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       setPosts(data.posts);
     } catch (err) {
@@ -63,7 +66,7 @@ function Search() {
   }
   async function getUsers() {
     try {
-      const res = await fetch(`http://localhost:3000/users`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/users`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +84,9 @@ function Search() {
   async function likePost(authorId, postId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${authorId}/posts/${postId}/likes`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${authorId}/posts/${postId}/likes`,
         {
           method: "POST",
           headers: {
@@ -97,7 +102,9 @@ function Search() {
   async function unlikePost(authorId, postId, likeId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${authorId}/posts/${postId}/likes/${likeId}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${authorId}/posts/${postId}/likes/${likeId}`,
         {
           method: "DELETE",
           headers: {

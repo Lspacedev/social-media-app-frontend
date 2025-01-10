@@ -20,7 +20,7 @@ function SignUp({ closeForm }) {
   async function handleSubmit() {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/sign-up", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

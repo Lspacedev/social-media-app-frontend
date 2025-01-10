@@ -51,7 +51,7 @@ function Profile() {
   }, [profile]);
 
   useEffect(() => {
-    const socket = io.connect("http://localhost:3000");
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
 
     const loggedProfileUpdate = (user) => {
       if (profile === userId) {
@@ -122,7 +122,7 @@ function Profile() {
   }
   async function getUsers() {
     try {
-      const res = await fetch(`http://localhost:3000/users`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/users`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -140,13 +140,16 @@ function Profile() {
   }
   async function getProfile() {
     try {
-      const res = await fetch(`http://localhost:3000/users/${profile}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
 
       if (res.ok) {
@@ -160,13 +163,16 @@ function Profile() {
 
   async function getPosts() {
     try {
-      const res = await fetch(`http://localhost:3000/users/${profile}/posts`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}/posts`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
 
       if (res.ok) {
@@ -179,7 +185,7 @@ function Profile() {
   async function getLikedPosts() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/likedPosts`,
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}/likedPosts`,
         {
           method: "GET",
           headers: {
@@ -243,13 +249,16 @@ function Profile() {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/users/${profile}`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       if (res) {
         setImages([]);
@@ -274,7 +283,9 @@ function Profile() {
     }
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/posts/${currentPost}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${profile}/posts/${currentPost}`,
         {
           method: "PUT",
           headers: {
@@ -297,7 +308,9 @@ function Profile() {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/posts/${currentPost}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${profile}/posts/${currentPost}`,
         {
           method: "DELETE",
           headers: {
@@ -318,7 +331,9 @@ function Profile() {
   async function likePost(authorId, postId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${authorId}/posts/${postId}/likes`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${authorId}/posts/${postId}/likes`,
         {
           method: "POST",
           headers: {
@@ -337,7 +352,9 @@ function Profile() {
   async function unlikePost(authorId, postId, likeId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${authorId}/posts/${postId}/likes/${likeId}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${authorId}/posts/${postId}/likes/${likeId}`,
         {
           method: "DELETE",
           headers: {
@@ -372,7 +389,7 @@ function Profile() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/messages`,
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}/messages`,
         {
           method: "POST",
           headers: {
@@ -395,7 +412,7 @@ function Profile() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/following`,
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}/following`,
         {
           method: "POST",
           headers: {
@@ -417,7 +434,7 @@ function Profile() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${profile}/unfollow`,
+        `${import.meta.env.VITE_PROD_URL}/users/${profile}/unfollow`,
         {
           method: "DELETE",
           headers: {

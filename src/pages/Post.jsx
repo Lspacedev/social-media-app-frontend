@@ -35,7 +35,7 @@ function Post() {
     })();
   }, [postId]);
   useEffect(() => {
-    const socket = io.connect("http://localhost:3000", {
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`, {
       transports: ["websocket"],
     });
 
@@ -49,7 +49,7 @@ function Post() {
   }, []);
   async function getUsers() {
     try {
-      const res = await fetch(`http://localhost:3000/users`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/users`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function Post() {
   async function getPost() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/posts/${postId}`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/posts/${postId}`,
         {
           method: "GET",
           headers: {
@@ -94,7 +94,9 @@ function Post() {
   async function likePost(postId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/posts/${postId}/likes`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${userId}/posts/${postId}/likes`,
         {
           method: "POST",
           headers: {
@@ -114,7 +116,9 @@ function Post() {
   async function unlikePost(postId, likeId) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/posts/${postId}/likes/${likeId}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${userId}/posts/${postId}/likes/${likeId}`,
         {
           method: "DELETE",
           headers: {
@@ -136,7 +140,9 @@ function Post() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/posts/${postId}/comments`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${userId}/posts/${postId}/comments`,
         {
           method: "POST",
           headers: {
@@ -157,7 +163,9 @@ function Post() {
   async function deleteComment() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/posts/${postId}/comments/${currentComment}`,
+        `${
+          import.meta.env.VITE_PROD_URL
+        }/users/${userId}/posts/${postId}/comments/${currentComment}`,
         {
           method: "DELETE",
           headers: {

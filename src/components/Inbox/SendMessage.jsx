@@ -14,7 +14,7 @@ function SendMessage() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/messages/${uid}`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/messages/${uid}`,
         {
           method: "POST",
           headers: {

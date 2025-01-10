@@ -17,7 +17,7 @@ function Notifications() {
     })();
   }, []);
   useEffect(() => {
-    const socket = io.connect("http://localhost:3000");
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
     const handleUpdateUser = (user) => {
       console.log({ user });
       setUser(user);
@@ -30,13 +30,16 @@ function Notifications() {
 
   async function getUser() {
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         setUser(data.user);
@@ -49,7 +52,7 @@ function Notifications() {
   async function deleteNotfication(id) {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/notifications/${id}`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/notifications/${id}`,
         {
           method: "DELETE",
           headers: {

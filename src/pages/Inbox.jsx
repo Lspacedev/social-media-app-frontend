@@ -20,7 +20,7 @@ function Inbox() {
   async function getMessages() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/messages`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/messages`,
         {
           method: "GET",
           headers: {

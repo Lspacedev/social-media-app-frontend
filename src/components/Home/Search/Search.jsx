@@ -67,7 +67,7 @@ function Search() {
   }, [searchTerm, searchAll]);
   useEffect(() => {
     console.log({ targetUserId }, Number(userId) !== targetUserId);
-    const socket = io.connect("http://localhost:3000");
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
     const loggedProfileUpdate = (userFollowers) => {
       if (Number(userId) !== targetUserId) {
       }
@@ -89,7 +89,7 @@ function Search() {
 
   async function getUsers() {
     try {
-      const res = await fetch(`http://localhost:3000/users`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/users`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +109,7 @@ function Search() {
   async function getFollowers() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/followers`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/followers`,
         {
           method: "GET",
           headers: {
@@ -131,7 +131,7 @@ function Search() {
   async function getFollowing() {
     try {
       const res = await fetch(
-        `http://localhost:3000/users/${userId}/following`,
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/following`,
         {
           method: "GET",
           headers: {
@@ -161,14 +161,17 @@ function Search() {
     setTargetUserId(id);
 
     try {
-      const res = await fetch(`http://localhost:3000/users/${id}/unfollow`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "Content-Length": 0,
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${id}/unfollow`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "Content-Length": 0,
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
 
       setLoading(false);
@@ -181,14 +184,17 @@ function Search() {
     parseJwt(token);
     setTargetUserId(id);
     try {
-      const res = await fetch(`http://localhost:3000/users/${id}/following`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Content-Length": 0,
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${id}/following`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Content-Length": 0,
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       console.log(res, data);
 

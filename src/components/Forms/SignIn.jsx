@@ -16,7 +16,7 @@ function Signin({ closeForm }) {
     let userData = { username: username, password: password };
 
     try {
-      const res = await fetch("http://localhost:3000/log-in", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/log-in`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),

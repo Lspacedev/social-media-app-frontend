@@ -23,13 +23,16 @@ function CreatePost() {
       formData.append("image", image);
     }
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}/posts`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/users/${userId}/posts`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         setLoading(false);
