@@ -13,6 +13,7 @@ import parseJwt from "../utils/checkToken";
 
 import { useParams } from "react-router-dom";
 import io from "socket.io-client";
+import { FaImage } from "react-icons/fa6";
 
 function Profile() {
   const [users, setUsers] = useState([]);
@@ -485,21 +486,31 @@ function Profile() {
             </div>
             <div className="update-inputs">
               <label htmlFor="cover">Cover Image</label>
+              <div className="file-input">
+                <label htmlFor="cover">
+                  <FaImage className="icon" />
+                </label>
 
-              <input
-                type="file"
-                name="cover"
-                id="cover"
-                onChange={handleCoverPicUpload}
-              />
+                <input
+                  type="file"
+                  name="cover"
+                  id="cover"
+                  onChange={handleCoverPicUpload}
+                />
+              </div>
               <label htmlFor="profilePic">Profile Pic</label>
+              <div className="file-input">
+                <label htmlFor="profilePic">
+                  <FaImage className="icon" />
+                </label>
 
-              <input
-                type="file"
-                name="profilePic"
-                id="profilePic"
-                onChange={handleProfilePicUpload}
-              />
+                <input
+                  type="file"
+                  name="profilePic"
+                  id="profilePic"
+                  onChange={handleProfilePicUpload}
+                />
+              </div>
               <label htmlFor="username">Username</label>
 
               <input
@@ -538,12 +549,18 @@ function Profile() {
               ></textarea>
             </div>
             <div className="edit-post-image">
-              <input
-                type="file"
-                name="post-image"
-                id="post-image"
-                onChange={(e) => setImage(e.target.files[0])}
-              />
+              <div className="file-input">
+                <label htmlFor="post-image">
+                  <FaImage className="icon" />
+                </label>
+
+                <input
+                  type="file"
+                  name="post-image"
+                  id="post-image"
+                  onChange={(e) => setImage(e.target.files[0])}
+                />
+              </div>
             </div>
             <br />
           </div>

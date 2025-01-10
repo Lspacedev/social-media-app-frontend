@@ -68,7 +68,7 @@ function Inbox() {
               style={{
                 color: "#e6e8e6",
                 textAlign: "center",
-                margin: "10px",
+                margin: "100px 0px",
               }}
             >
               No messages
