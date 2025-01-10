@@ -633,6 +633,7 @@ body,
   right: 150px;
   display: flex;
   flex-direction: column;
+  border-radius: 7px;
 }
 
 .option {

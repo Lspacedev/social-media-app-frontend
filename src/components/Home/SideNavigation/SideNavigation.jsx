@@ -9,7 +9,7 @@ import io from "socket.io-client";
 
 function SideNavigation() {
   const [user, setUser] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const navigation = useNavigate();
 
@@ -20,7 +20,7 @@ function SideNavigation() {
   useEffect(() => {
     (async () => {
       await getUser();
-      setLoading(false);
+      // setLoading(false);
     })();
   }, []);
   useEffect(() => {
@@ -34,6 +34,8 @@ function SideNavigation() {
 
   async function getUser() {
     try {
+      setLoading(true);
+
       const res = await fetch(`http://localhost:3000/users/${userId}`, {
         method: "GET",
         headers: {
@@ -44,10 +46,13 @@ function SideNavigation() {
       const data = await res.json();
       if (res.ok) {
         setUser(data.user);
+        setLoading(false);
+
         //navigation(0);
       }
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   }
 
@@ -99,7 +104,10 @@ function SideNavigation() {
         <div className="notifs">
           <MdNotifications color="#e6e8e6" size="2.5rem" className="icon" />
           <span className="notifs-count">
-            {user && user.notifications.length > 0 && user.notifications.length}
+            {user &&
+              user.notifications &&
+              user.notifications.length > 0 &&
+              user.notifications.length}
           </span>
         </div>
         <div className="notifs">Notifications</div>

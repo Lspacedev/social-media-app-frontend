@@ -584,7 +584,7 @@ function Profile() {
         <div>@{user.username}</div>
         <div>
           {"Joined "}
-          {new Date(user.joined).toDateString()}
+          {user && user.joined && new Date(user.joined).toDateString()}
         </div>
         <div className="follows">
           <div>
