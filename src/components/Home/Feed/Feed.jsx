@@ -32,7 +32,9 @@ function Feed() {
   }, [currentTab]);
 
   useEffect(() => {
-    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`, {
+      withCredentials: true,
+    });
 
     const handlePostsUpdate = (posts) => {
       setPosts(posts);
