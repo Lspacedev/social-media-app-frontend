@@ -33,17 +33,18 @@ body,
   cursor: pointer;
 }
 .signin-btn {
-  border: 1px solid #e6e8e6;
-  background-color: transparent;
+  background-color: #e6e8e6;
   padding: 10px 90px;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 25rem;
-  color: #3772ff;
+  color: black;
   outline: none;
+  border: none;
 }
 .signin-btn:hover {
-  background-color: #00030a;
+  background-color: #3772ff;
+  color: #e6e8e6;
   cursor: pointer;
 }
 .guest-signin-btn {
