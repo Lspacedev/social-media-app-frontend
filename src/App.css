@@ -437,6 +437,9 @@ body,
   border-radius: 25rem;
   outline: none;
 }
+.edit-profile .edit-btn:hover {
+  background-color: rgb(15, 15, 15);
+}
 .profile-info {
   flex: 2;
   color: gray;
@@ -642,6 +645,11 @@ body,
   gap: 5px;
   align-items: center;
   cursor: pointer;
+}
+
+.post-likes .icon:hover {
+  box-shadow: 1px 1px 30px red;
+  background-color: rgba(54, 0, 0, 0.699);
 }
 
 .options-modal {
@@ -1120,7 +1128,9 @@ body,
   border-radius: 25rem;
   outline: none;
 }
-
+.unfollow-btn:hover {
+  background-color: #cccccc;
+}
 .PostsSearch {
   flex: 2;
   padding: 0px;
