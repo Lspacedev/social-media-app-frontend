@@ -1302,6 +1302,7 @@ body,
     color: black;
     outline: none;
     border: none;
+    margin: 5px 0px;
   }
   .signin-btn:hover {
     background-color: #3772ff;
@@ -1317,6 +1318,7 @@ body,
     border-radius: 25rem;
     color: #3772ff;
     outline: none;
+    margin: 5px 0px;
   }
   .guest-signin-btn:hover {
     background-color: #00030a;
@@ -1408,6 +1410,7 @@ body,
 
   .CreatePost {
     margin-top: 15px;
+    height: 150px;
     border: 0.1rem solid rgb(230, 232, 230, 0.2);
     border-radius: 10px;
     background-color: rgb(5, 5, 5);
@@ -1721,7 +1724,7 @@ body,
     flex: 1;
     display: flex;
     background-color: black;
-    padding: 100px 0px 0px 0px;
+    padding: 100px 5px 0px 5px;
   }
   .sideNavLink {
     margin: 10px;
@@ -1764,6 +1767,5 @@ body,
   }
   .Search {
     background-color: black;
-    padding: 100px 0px 0px 0px;
   }
 }

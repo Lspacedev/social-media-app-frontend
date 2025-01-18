@@ -108,8 +108,7 @@ function Landing() {
           <button className="signin-btn" onClick={() => setSignInOpen(true)}>
             Sign in
           </button>
-          <br />
-          <br />
+
           <button
             className="guest-signin-btn"
             onClick={() => (loading ? console.log("loading") : guestSignIn())}
