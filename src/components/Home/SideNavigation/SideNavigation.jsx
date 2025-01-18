@@ -5,6 +5,8 @@ import { MdPermIdentity } from "react-icons/md";
 import { MdOutlineInbox } from "react-icons/md";
 import { MdNotifications } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
+import { CgClose } from "react-icons/cg";
+
 import io from "socket.io-client";
 
 function SideNavigation() {
@@ -80,25 +82,16 @@ function SideNavigation() {
     navigation("/");
   }
 
-  if (loading)
-    return (
-      <div
-        style={{
-          color: "#e6e8e6",
-          flex: 1,
-          height: "100vh",
-          width: "100vw",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Loading...
-      </div>
-    );
-
+  if (loading) return <div className="side-loading">Loading...</div>;
+  function handleHamBurgerMenu() {
+    const sidebar = document.querySelector(".SideNavigation");
+    sidebar.classList.toggle("active");
+  }
   return (
     <div className="SideNavigation">
+      <div className="side-close" onClick={handleHamBurgerMenu}>
+        <CgClose />
+      </div>
       <div className="sideNavLink" onClick={goToHome}>
         <MdHomeFilled color="#e6e8e6" size="2.5rem" className="icon" />
         <div>Home</div>

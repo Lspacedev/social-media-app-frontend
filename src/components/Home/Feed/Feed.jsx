@@ -179,6 +179,10 @@ function Feed() {
   function goToProfile(id) {
     navigation(`/home/${id}`);
   }
+  function handleHamBurgerMenu() {
+    const sidebar = document.querySelector(".SideNavigation");
+    sidebar.classList.toggle("active");
+  }
   if (loading)
     return (
       <div
@@ -198,7 +202,14 @@ function Feed() {
   return (
     <div className="Feed">
       <div className="feed-header">
-        <div className="logo">RANT</div>
+        <div className="logo-ham">
+          <div className="hamburger-menu" onClick={handleHamBurgerMenu}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div className="logo">RANT</div>
+        </div>
         <div className="all-following">
           <div
             className={currentTab === "fyp" ? "fyp currentTab" : "fyp"}

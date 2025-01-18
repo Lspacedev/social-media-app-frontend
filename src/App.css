@@ -18,8 +18,17 @@ body,
 .App {
   background-color: #900;
 }
+.side-loading {
+  color: #e6e8e6;
+  flex: 1;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.register-btn {
+/* .register-btn {
   background-color: #3772ff;
   padding: 10px 90px;
   font-size: 1.2rem;
@@ -60,7 +69,7 @@ body,
 .guest-signin-btn:hover {
   background-color: #00030a;
   cursor: pointer;
-}
+} */
 .Modal {
   position: fixed;
   top: 0;
@@ -83,7 +92,7 @@ body,
   color: #e6e8e6;
 }
 
-.Signin {
+/* .Signin {
   margin: 0 auto 0 auto;
   padding: 15px;
   width: 30%;
@@ -108,14 +117,14 @@ body,
   padding: 15px 0 15px 20px;
   box-sizing: border-box;
   color: #e6e8e6;
-}
+} */
 .Signin input:focus {
   border: 1px solid #709bff;
 }
 .Signin input:focus::placeholder {
   color: #3772ff;
 }
-.Signin button {
+/* .Signin button {
   padding: 12px 25px;
   border-radius: 25px;
   font-size: 1.1rem;
@@ -129,13 +138,13 @@ body,
   border-radius: 7px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .signin-form-div .form div label {
   display: flex;
   justify-content: space-between;
 }
-
+/* 
 .SignUp {
   margin: 0 auto 0 auto;
   padding: 15px;
@@ -144,13 +153,13 @@ body,
   overflow: hidden;
   border-radius: 15px;
   background-color: black;
-}
+} */
 
 .SignUp h3 {
   color: #e6e8e6;
   font-size: 2rem;
 }
-.SignUp input {
+/* .SignUp input {
   width: 100%;
   margin: 5px auto;
   padding: 15px 0px;
@@ -161,31 +170,31 @@ body,
   padding: 15px 0 15px 20px;
   box-sizing: border-box;
   color: #e6e8e6;
-}
+} */
 .SignUp input:focus {
   border: 1px solid #709bff;
 }
 .SignUp input:focus::placeholder {
   color: #3772ff;
 }
-.SignUp button {
+/* .SignUp button {
   padding: 12px 25px;
   border-radius: 25px;
   font-size: 1.1rem;
   cursor: pointer;
   outline: none;
   border: none;
-}
+} */
 .SignUp button:hover {
   background-color: #e6e8e6;
 }
-.signup-form-div {
+/* .signup-form-div {
   width: 70%;
   margin: 5px auto;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .signup-form-div .form div label {
   display: flex;
@@ -195,21 +204,9 @@ body,
 .Home {
   height: 100%;
   display: flex;
-  padding: 0px 300px;
+  /* padding: 0% 7%; */
   overflow-y: auto;
   background-color: black;
-}
-
-.SideNavigation {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  bottom: 0;
-  overflow-y: auto;
-  z-index: 2;
-  padding-top: 100px;
 }
 
 .Feed .logo {
@@ -222,7 +219,7 @@ body,
   text-align: center;
 }
 .sideNavLink {
-  width: fit-content;
+  width: 90%;
   margin: 25px 0px;
   padding: 0px;
   display: flex;
@@ -297,11 +294,10 @@ body,
   position: sticky;
   top: 0;
   bottom: 0;
-  overflow-y: auto;
   z-index: 2;
   padding: 100px 25px 0px 25px;
 }
-.CreatePost {
+/* .CreatePost {
   margin-top: 15px;
   border: 0.1rem solid rgb(230, 232, 230, 0.2);
   border-radius: 10px;
@@ -359,7 +355,7 @@ body,
   font-weight: "800";
   cursor: pointer;
   outline: none;
-}
+} */
 
 .Profile {
   flex: 2;
@@ -832,9 +828,14 @@ body,
   height: 100vh;
   width: 100vw;
   display: "flex";
+
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
+.Inbox::-webkit-scrollbar {
+  display: none;
+}
 .msg-btn {
   border: none;
   outline: none;
@@ -911,8 +912,15 @@ body,
   height: 90%;
   border-radius: 25px;
   margin: 0px auto;
-  overflow-y: auto;
+
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
+
+.texts::-webkit-scrollbar {
+  display: none;
+}
+
 .texts .text {
   width: fit-content;
   max-width: 50%;
@@ -1165,12 +1173,16 @@ body,
 
 .notifs {
   position: relative;
+  margin: 0px;
+  padding: 0px;
 }
 
 .notifs-count {
   color: #1f62ff;
   font-size: 1rem;
   position: absolute;
+  margin: 0px;
+  padding: 0px;
 }
 
 .all-user-results {
@@ -1206,12 +1218,258 @@ body,
   .Home {
     padding: 0px;
   }
+}
+
+@media (min-width: 320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  .Landing {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    font-size: 15rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Silkscreen, serif;
+    -webkit-text-stroke: 3px #e6e8e6;
+  }
+  .landing-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0px;
+  }
+  .landing-content h1 {
+    color: #e6e8e6;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .landing-content h2 {
+    color: #e6e8e6;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .landing-image {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .register-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .sign-in-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .register-btn {
+    background-color: #3772ff;
+    padding: 10px 45px;
+    font-size: 1.2rem;
+    border-radius: 25rem;
+    color: white;
+    outline: none;
+    border: none;
+  }
+  .register-btn:hover {
+    background-color: #1f62ff;
+    cursor: pointer;
+  }
+  .signin-btn {
+    background-color: #e6e8e6;
+    padding: 10px 90px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25rem;
+    color: black;
+    outline: none;
+    border: none;
+  }
+  .signin-btn:hover {
+    background-color: #3772ff;
+    color: #e6e8e6;
+    cursor: pointer;
+  }
+  .guest-signin-btn {
+    border: 1px solid #e6e8e6;
+    background-color: transparent;
+    padding: 10px 64px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25rem;
+    color: #3772ff;
+    outline: none;
+  }
+  .guest-signin-btn:hover {
+    background-color: #00030a;
+    cursor: pointer;
+  }
+
+  .Signin {
+    margin: 0 auto 0 auto;
+    padding: 15px;
+    width: 95%;
+    height: 95%;
+    border-radius: 15px;
+    background-color: black;
+    overflow-y: auto;
+  }
+
+  .Signin h3 {
+    color: #e6e8e6;
+    font-size: 2rem;
+  }
+  .Signin input {
+    width: 100%;
+    margin: 5px auto;
+    padding: 15px 0px;
+    background-color: black;
+    border: 0.1rem solid grey;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px 0 15px 20px;
+    box-sizing: border-box;
+    color: #e6e8e6;
+  }
+  .Signin button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .signin-form-div {
+    width: 100%;
+    margin: 5px auto;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SignUp {
+    margin: 0 auto 0 auto;
+    padding: 15px;
+    width: 95%;
+    height: 95%;
+    border-radius: 15px;
+    background-color: black;
+    overflow-y: auto;
+  }
+  .signup-form-div {
+    width: 100%;
+    margin: 5px auto;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SignUp input {
+    width: 100%;
+    margin: 5px auto;
+    padding: 15px 0px;
+    background-color: black;
+    border: 0.1rem solid grey;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px 0 15px 20px;
+    box-sizing: border-box;
+    color: #e6e8e6;
+  }
+  .SignUp button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  .Home {
+    background-color: black;
+  }
+
+  .CreatePost {
+    margin-top: 15px;
+    border: 0.1rem solid rgb(230, 232, 230, 0.2);
+    border-radius: 10px;
+    background-color: rgb(5, 5, 5);
+  }
+  .CreatePost .textArea {
+    flex: 2;
+    height: 150px;
+    border-radius: 10px;
+  }
+  .CreatePost .textArea textarea {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    resize: none;
+    color: #e6e8e6;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(5, 5, 5);
+    border-radius: 10px 10px 0px 0px;
+  }
+  .CreatePost input {
+    color: grey;
+  }
+  .CreatePost input[type="file"] {
+  }
+  .CreatePost input[type="file"]::-webkit-file-upload-button,
+  .CreatePost input[type="file"]::file-selector-button {
+    display: none;
+    width: 5%;
+    color: #3772ff;
+  }
+  .CreatePost label {
+    font-size: 1.4rem;
+    padding: 0px 15px;
+    cursor: pointer;
+  }
+  .CreatePost label .icon {
+    color: #3772ff;
+  }
+  .CreatePost .post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 7px;
+  }
+
+  .CreatePost .post-content button {
+    padding: 5px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: "800";
+    cursor: pointer;
+    outline: none;
+  }
   .Feed {
     flex: 1;
   }
   .Feed .post-card {
     padding: 0px;
-    margin: 15px;
   }
   .Feed .card-pic-cont {
     display: none;
@@ -1219,16 +1477,293 @@ body,
   .card-text {
     margin: 0px;
   }
-  .SideNavigation {
+  .comment-card .card-pic-cont {
     display: none;
   }
+
+  /* .SideNavigation {
+    display: none;
+  } */
   .Search {
     display: none;
   }
-  .CreatePost .post-content {
-    flex-direction: column;
+
+  .side-loading {
+    display: none;
   }
-  .CreatePost .post-content button {
-    padding: 5px;
+  .search-loading {
+    display: none;
+  }
+
+  .SideNavigation {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    width: 80%;
+    z-index: 3;
+    padding-top: 6rem;
+
+    align-items: center;
+    text-align: center;
+
+    color: black;
+
+    transition: 0.15s ease-in-out;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+
+  .Inbox::-webkit-scrollbar {
+    display: none;
+  }
+  .SideNavigation.active {
+    left: 0;
+  }
+  .hamburger-menu {
+    margin: 5px 0px 5px 20px;
+  }
+
+  .hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #e6e8e6;
+    margin: 5px 0;
+  }
+  .hamburger-menu {
+    display: block;
+
+    z-index: 1;
+  }
+  .side-close {
+    color: #e6e8e6;
+    text-align: end;
+    width: 80%;
+    font-size: 1.5rem;
+  }
+
+  .profile-pic {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 80px;
+    left: 5px;
+  }
+}
+@media (min-width: 480px) {
+  /* smartphones; Android phones, landscape iPhone */
+  .Landing {
+    background-color: black;
+  }
+  .SignUp {
+    width: 85%;
+    height: 90%;
+  }
+  .Signin {
+    width: 85%;
+    height: 90%;
+  }
+  .Home {
+    background-color: black;
+  }
+  .CreatePost .post-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .Feed .card-pic-cont {
+    display: flex;
+  }
+  .comment-card .card-pic-cont {
+    display: flex;
+  }
+  .Feed .post-card {
+    padding: 15px;
+  }
+}
+@media (min-width: 600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  .Landing {
+    background-color: black;
+  }
+  .logo {
+    font-size: 20rem;
+  }
+  .SignUp {
+    width: 65%;
+    height: 90%;
+  }
+  .Signin {
+    width: 65%;
+    height: 90%;
+  }
+  .landing-content h1 {
+    font-size: 4rem;
+  }
+  .Home {
+    background-color: black;
+  }
+  .profile-pic {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 170px;
+    left: 25px;
+  }
+}
+@media (min-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .Landing {
+    background-color: black;
+    flex-direction: row;
+  }
+  .landing-content {
+    align-items: start;
+  }
+  .landing-content h1 {
+    text-align: start;
+  }
+
+  .landing-content h2 {
+    text-align: start;
+  }
+  .register-div {
+    align-items: start;
+    text-align: start;
+  }
+  .sign-in-div {
+    align-items: start;
+    text-align: start;
+  }
+  .logo {
+    font-size: 25rem;
+  }
+  .SignUp {
+    width: 50%;
+    height: 90%;
+  }
+  .Signin {
+    width: 50%;
+    height: 80%;
+  }
+  .Home {
+    background-color: black;
+  }
+  .hamburger-menu {
+    display: none; /* Hidden by default for larger screens */
+    cursor: pointer;
+  }
+  .side-close {
+    display: none;
+  }
+  .SideNavigation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    padding-top: 100px;
+    width: 100%;
+    transition: none;
+  }
+  .Feed {
+    flex: 2;
+  }
+
+  .side-loading {
+    color: #e6e8e6;
+    flex: 1;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  .Landing {
+    background-color: black;
+  }
+  .landing-content h1 {
+    font-size: 5rem;
+  }
+
+  .SignUp {
+    width: 40%;
+    height: 90%;
+  }
+  .Signin {
+    width: 40%;
+    height: 80%;
+  }
+  .logo {
+    font-size: 30rem;
+  }
+  .Home {
+    padding: 0% 0%;
+    background-color: black;
+  }
+  .SideNavigation {
+    background-color: black;
+  }
+  .Feed {
+    flex: 2;
+  }
+  .Search {
+    flex: 1;
+    display: flex;
+    background-color: black;
+    padding: 100px 0px 0px 0px;
+  }
+  .sideNavLink {
+    margin: 10px;
+  }
+  .search-loading {
+    color: #e6e8e6;
+    flex: 1;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .Landing {
+    background-color: black;
+  }
+  .SignUp {
+    width: 35%;
+    height: 90%;
+  }
+  .Signin {
+    width: 35%;
+    height: 90%;
+  }
+  .logo {
+    font-size: 35rem;
+  }
+  .Home {
+    padding: 0% 7%;
+    background-color: black;
+  }
+  .SideNavigation {
+    background-color: black;
+  }
+  .sideNavLink {
+    width: 80%;
+  }
+  .Search {
+    background-color: black;
+    padding: 100px 0px 0px 0px;
   }
 }

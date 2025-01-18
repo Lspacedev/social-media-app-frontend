@@ -35,7 +35,7 @@ function Landing() {
   }
 
   return (
-    <div className="Landing" style={landing}>
+    <div className="Landing">
       {signInOpen && (
         <div className="Modal">
           <Signin closeForm={() => setSignInOpen(false)} />
@@ -48,50 +48,40 @@ function Landing() {
       )}
       <div
         className="landing-image"
-        style={{
-          flex: 1,
-          height: "inherit",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 0,
-        }}
+        // style={{
+        //   flex: 1,
+        //   height: "inherit",
+        //   display: "flex",
+        //   flexDirection: "row",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        //   padding: 0,
+        // }}
       >
-        <div style={logo}>R</div>
+        <div className="logo">R</div>
       </div>
-      <div
-        className="landing-content"
-        style={{
-          flex: 1,
-          height: "inherit",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
-        }}
-      >
+      <div className="landing-content">
         <h1
-          style={{
-            color: "#E6E8E6",
-            fontSize: "6rem",
-            fontWeight: "bold",
-            margin: "0px",
-          }}
+        // style={{
+        //   color: "#E6E8E6",
+        //   fontSize: "1rem",
+        //   fontWeight: "bold",
+        //   margin: "0px",
+        // }}
         >
           Ode to Express
         </h1>
         <h2
-          style={{
-            color: "#E6E8E6",
-            fontSize: "2.5rem",
-            fontWeight: "bold",
-            marginBottom: "20px",
-          }}
+        // style={{
+        //   color: "#E6E8E6",
+        //   fontSize: "2.5rem",
+        //   fontWeight: "bold",
+        //   marginBottom: "20px",
+        // }}
         >
           Join Now!
         </h2>
-        <div style={{ marginBottom: "10px" }}>
+        <div className="register-div">
           <button className="register-btn" onClick={() => setSignUpOpen(true)}>
             Create account
           </button>
@@ -105,7 +95,7 @@ function Landing() {
             including Cookie Use.
           </p>
         </div>
-        <div style={{ marginTop: "2rem" }}>
+        <div className="sign-in-div">
           <p
             style={{
               color: "#E6E8E6",
@@ -131,20 +121,5 @@ function Landing() {
     </div>
   );
 }
-const landing = {
-  height: "inherit",
-  display: "flex",
-  flexDirection: "row",
-  alignItems: "center",
-  backgroundColor: "black",
-  margin: "0px",
-  padding: "0px",
-};
-const logo = {
-  fontSize: "42rem",
-  fontWeight: "400",
-  fontStyle: "normal",
-  fontFamily: "Silkscreen, serif",
-  WebkitTextStroke: "3px #E6E8E6",
-};
+
 export default Landing;

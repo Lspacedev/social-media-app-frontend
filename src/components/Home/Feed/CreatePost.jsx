@@ -45,7 +45,6 @@ function CreatePost() {
     <div
       className="CreatePost"
       style={{
-        height: "150px",
         display: "flex",
         flexDirection: "column",
       }}

@@ -208,22 +208,7 @@ function Search() {
     const [user] = users.filter((user) => user.id === id);
     return user.profileUrl;
   }
-  if (loading)
-    return (
-      <div
-        style={{
-          color: "#e6e8e6",
-          flex: 1,
-          height: "100vh",
-          width: "100vw",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Loading...
-      </div>
-    );
+  if (loading) return <div className="search-loading">Loading...</div>;
   return (
     <div className="Search">
       <div className="SearchBar">
