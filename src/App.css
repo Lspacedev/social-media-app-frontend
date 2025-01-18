@@ -1469,7 +1469,7 @@ body,
     flex: 1;
   }
   .Feed .post-card {
-    padding: 0px;
+    padding: 5px 2px;
   }
   .Feed .card-pic-cont {
     display: none;
