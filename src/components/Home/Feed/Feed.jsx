@@ -11,7 +11,7 @@ function Feed() {
   const [forYouPosts, setForYouPosts] = useState([]);
   const [followingPosts, setFolllowingPosts] = useState([]);
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [currentTab, setCurrentTab] = useState("fyp");
 
   const navigation = useNavigate();
@@ -19,16 +19,16 @@ function Feed() {
 
   const token = localStorage.getItem("token");
   useEffect(() => {
-    (async () => {
-      await getUsers();
+    setLoading(true);
 
-      if (currentTab === "fyp") {
-        await getFeed();
-      } else {
-        await getFollowingPosts();
-      }
-      setLoading(false);
-    })();
+    getUsers();
+
+    if (currentTab === "fyp") {
+      getFeed();
+    } else {
+      getFollowingPosts();
+    }
+    setLoading(false);
   }, [currentTab]);
 
   useEffect(() => {

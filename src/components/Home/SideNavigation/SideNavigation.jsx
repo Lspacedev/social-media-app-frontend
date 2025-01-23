@@ -20,10 +20,8 @@ function SideNavigation() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    (async () => {
-      await getUser();
-      // setLoading(false);
-    })();
+    getUser();
+    // setLoading(false);
   }, []);
   useEffect(() => {
     const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);

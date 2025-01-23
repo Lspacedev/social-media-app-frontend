@@ -1420,7 +1420,7 @@ body,
 
   .CreatePost {
     margin-top: 15px;
-    height: 150px;
+    height: 250px;
     border: 0.1rem solid rgb(230, 232, 230, 0.2);
     border-radius: 10px;
     background-color: rgb(5, 5, 5);
@@ -1481,8 +1481,11 @@ body,
   .Feed {
     flex: 1;
   }
+
   .Feed .post-card {
-    padding: 5px 2px;
+    width: 95%;
+    padding: 15px 5px;
+    margin: 5px auto;
   }
   .Feed .card-pic-cont {
     display: none;
@@ -1583,6 +1586,10 @@ body,
   }
   .Home {
     background-color: black;
+  }
+
+  .CreatePost {
+    height: 150px;
   }
   .CreatePost .post-content {
     flex-direction: row;

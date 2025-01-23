@@ -15,7 +15,7 @@ function Search() {
   const [following, setFollowing] = useState([]);
   const [users, setUsers] = useState([]);
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [currentTab, setCurrentTab] = useState("Followers");
   const [targetUserId, setTargetUserId] = useState("");
 
@@ -25,6 +25,7 @@ function Search() {
 
   useEffect(() => {
     (async () => {
+      setLoading(true);
       await getUsers();
       await getFollowers();
       await getFollowing();
