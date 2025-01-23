@@ -232,7 +232,7 @@ function Feed() {
 
       <CreatePost />
       <div className="posts">
-        {posts.length > 0 ? (
+        {posts && posts.length > 0 ? (
           posts.map((post, i) => (
             <div className="post-card" key={i}>
               <div className="card-pic-cont">
