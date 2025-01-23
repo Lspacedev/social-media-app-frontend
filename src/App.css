@@ -579,10 +579,11 @@ body,
 
 .card-pic {
   flex: 1;
-  background-color: navy;
+  background-color: gray;
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  border: none;
 }
 .Profile .card-pic img {
   width: 100%;
@@ -1483,9 +1484,8 @@ body,
   }
 
   .Feed .post-card {
-    width: 95%;
-    padding: 15px 5px;
-    margin: 5px auto;
+    padding: 15px 2px;
+    margin: 10px 3px;
   }
   .Feed .card-pic-cont {
     display: none;
@@ -1603,6 +1603,7 @@ body,
   }
   .Feed .post-card {
     padding: 15px;
+    margin: 10px 0px;
   }
 }
 @media (min-width: 600px) {

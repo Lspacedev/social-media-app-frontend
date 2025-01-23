@@ -11,7 +11,7 @@ function Feed() {
   const [forYouPosts, setForYouPosts] = useState([]);
   const [followingPosts, setFolllowingPosts] = useState([]);
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [currentTab, setCurrentTab] = useState("fyp");
 
   const navigation = useNavigate();
@@ -167,11 +167,13 @@ function Feed() {
   }
   function getUsername(id) {
     const [user] = users.filter((user) => user.id === id);
-    return user.username;
+    return user && user.username;
   }
   function getUserProfile(id) {
-    const [user] = users.filter((user) => user.id === id);
-    return user.profileUrl;
+    if (users && users.length > 0) {
+      const [user] = users.filter((user) => user.id === id);
+      return user && user.profileUrl;
+    }
   }
   function goToPost(userId, postId) {
     navigation(`/home/${userId}/posts/${postId}`);
@@ -183,7 +185,7 @@ function Feed() {
     const sidebar = document.querySelector(".SideNavigation");
     sidebar.classList.toggle("active");
   }
-  if (loading)
+  if (loading) {
     return (
       <div
         style={{
@@ -199,6 +201,24 @@ function Feed() {
         Loading...
       </div>
     );
+  }
+  if (!posts) {
+    return (
+      <div
+        style={{
+          color: "#e6e8e6",
+          flex: 2,
+          height: "100vh",
+          width: "100vw",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        No posts
+      </div>
+    );
+  }
   return (
     <div className="Feed">
       <div className="feed-header">
@@ -232,111 +252,126 @@ function Feed() {
 
       <CreatePost />
       <div className="posts">
-        {posts && posts.length > 0 ? (
-          posts.map((post, i) => (
-            <div className="post-card" key={i}>
-              <div className="card-pic-cont">
-                <div
-                  className="card-pic
+        {
+          posts &&
+            posts.length > 0 &&
+            posts.map((post, i) => (
+              <div className="post-card" key={i}>
+                <div className="card-pic-cont">
+                  <div
+                    className="card-pic
                     "
-                >
-                  {getUserProfile(post.authorId) === null ? (
-                    <img src="/images/blank-profile-picture-973460_1280.png" />
-                  ) : (
-                    <img src={getUserProfile(post.authorId)} />
-                  )}
-                </div>
-              </div>
-              <div className="card-details">
-                <div
-                  className="username-options"
-                  onClick={() => goToProfile(post.authorId)}
-                >
-                  <div className="username">
-                    {typeof post !== "undefined" && getUsername(post.authorId)}
-                  </div>
-                  <div className="card-username">
-                    @{typeof post !== "undefined" && getUsername(post.authorId)}
-                  </div>
-                </div>
-                <div
-                  className="card-post"
-                  onClick={() => goToPost(post.authorId, post.id)}
-                >
-                  <div className="card-text">
-                    {typeof post !== "undefined" && post.text}
-                  </div>
-                  {typeof post !== "undefined" &&
-                    typeof post.imageUrl !== "undefined" &&
-                    post.imageUrl !== null &&
-                    post.imageUrl !== "" && (
-                      <div className="card-image">
-                        <img src={post.imageUrl} />
-                      </div>
+                  >
+                    {users && getUserProfile(post.authorId) === null ? (
+                      <img src="/images/blank-profile-picture-973460_1280.png" />
+                    ) : (
+                      <img src={users && getUserProfile(post.authorId)} />
                     )}
-                </div>
-                <div className="comments-likes">
-                  <div className="post-comments">
-                    <FaRegComment color="grey" className="icon" />
-                    <div style={{ color: "grey" }}>{post.comments.length}</div>
                   </div>
-
-                  {post.likes.length > 0 ? (
-                    post.likes
-                      .map((x) => x.likedById)
-                      .indexOf(Number(userId)) !== -1 ? (
-                      <div
-                        className="post-likes"
-                        onClick={() =>
-                          unlikePost(
-                            post.authorId,
-                            post.id,
-                            post.likes[
-                              post.likes
-                                .map((x) => x.likedById)
-                                .indexOf(Number(userId))
-                            ]
-                          )
-                        }
-                      >
-                        <IoIosHeart color="red" className="icon" />
-
-                        <div style={{ color: "grey" }}>{post.likes.length}</div>
+                </div>
+                <div className="card-details">
+                  <div
+                    className="username-options"
+                    onClick={() => goToProfile(post.authorId)}
+                  >
+                    <div className="username">
+                      {typeof post !== "undefined" &&
+                        users &&
+                        getUsername(post.authorId)}
+                    </div>
+                    <div className="card-username">
+                      @
+                      {typeof post !== "undefined" &&
+                        users &&
+                        getUsername(post.authorId)}
+                    </div>
+                  </div>
+                  <div
+                    className="card-post"
+                    onClick={() => goToPost(post.authorId, post.id)}
+                  >
+                    <div className="card-text">
+                      {typeof post !== "undefined" && post.text}
+                    </div>
+                    {typeof post !== "undefined" &&
+                      typeof post.imageUrl !== "undefined" &&
+                      post.imageUrl !== null &&
+                      post.imageUrl !== "" && (
+                        <div className="card-image">
+                          <img src={post.imageUrl} />
+                        </div>
+                      )}
+                  </div>
+                  <div className="comments-likes">
+                    <div className="post-comments">
+                      <FaRegComment color="grey" className="icon" />
+                      <div style={{ color: "grey" }}>
+                        {post.comments.length}
                       </div>
+                    </div>
+
+                    {post.likes.length > 0 ? (
+                      post.likes
+                        .map((x) => x.likedById)
+                        .indexOf(Number(userId)) !== -1 ? (
+                        <div
+                          className="post-likes"
+                          onClick={() =>
+                            unlikePost(
+                              post.authorId,
+                              post.id,
+                              post.likes[
+                                post.likes
+                                  .map((x) => x.likedById)
+                                  .indexOf(Number(userId))
+                              ]
+                            )
+                          }
+                        >
+                          <IoIosHeart color="red" className="icon" />
+
+                          <div style={{ color: "grey" }}>
+                            {post.likes.length}
+                          </div>
+                        </div>
+                      ) : (
+                        <div
+                          className="post-likes"
+                          onClick={() => likePost(post.authorId, post.id)}
+                        >
+                          <FaRegHeart color="grey" className="icon" />
+
+                          <div style={{ color: "grey" }}>
+                            {post.likes.length}
+                          </div>
+                        </div>
+                      )
                     ) : (
                       <div
                         className="post-likes"
                         onClick={() => likePost(post.authorId, post.id)}
                       >
-                        <FaRegHeart color="grey" className="icon" />
-
+                        <FaRegHeart key={i} color="grey" className="icon" />
                         <div style={{ color: "grey" }}>{post.likes.length}</div>
                       </div>
-                    )
-                  ) : (
-                    <div
-                      className="post-likes"
-                      onClick={() => likePost(post.authorId, post.id)}
-                    >
-                      <FaRegHeart key={i} color="grey" className="icon" />
-                      <div style={{ color: "grey" }}>{post.likes.length}</div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <div
-            style={{
-              color: "#e6e8e6",
-              textAlign: "center",
-              margin: "10px",
-            }}
-          >
-            No posts.
-          </div>
-        )}
+            ))
+          // : posts &&
+          //   posts.length === 0 && (
+          //     <div
+          //       style={{
+          //         color: "#e6e8e6",
+          //         textAlign: "center",
+          //         margin: "10px",
+          //       }}
+          //     >
+          //       No posts.
+          //     </div>
+          //   )
+        }
       </div>
     </div>
   );

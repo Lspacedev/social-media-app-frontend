@@ -80,11 +80,12 @@ function SideNavigation() {
     navigation("/");
   }
 
-  if (loading) return <div className="side-loading">Loading...</div>;
   function handleHamBurgerMenu() {
     const sidebar = document.querySelector(".SideNavigation");
     sidebar.classList.toggle("active");
   }
+  if (loading) return <div className="side-loading">Loading...</div>;
+
   return (
     <div className="SideNavigation">
       <div className="side-close" onClick={handleHamBurgerMenu}>
