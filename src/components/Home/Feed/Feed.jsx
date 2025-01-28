@@ -35,6 +35,7 @@ function Feed() {
 
   useEffect(() => {
     const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`, {
+      transports: ["websocket"],
       withCredentials: true,
     });
 
@@ -43,16 +44,11 @@ function Feed() {
     };
 
     const handleFeedUpdate = (feedPosts) => {
-      console.log({ feedPosts });
-
       if (currentTab === "fyp") {
-        console.log({ currentTab });
-
         setPosts(feedPosts);
       }
     };
     const handleFollowingUpdate = (followingPosts) => {
-      console.log({ followingPosts, currentTab });
       if (currentTab === "flw") {
         setPosts(followingPosts);
       }

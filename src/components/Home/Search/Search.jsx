@@ -26,7 +26,7 @@ function Search() {
   useEffect(() => {
     (async () => {
       setLoading(true);
-      getUsers();
+      await getUsers();
       getFollowers();
       getFollowing();
       setLoading(false);

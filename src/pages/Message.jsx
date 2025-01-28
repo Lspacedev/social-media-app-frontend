@@ -18,7 +18,9 @@ function Message() {
   }, []);
 
   useEffect(() => {
-    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`, {
+      transports: ["websocket"],
+    });
 
     socket.on("reply-added", (message) => {
       setMessage(message);

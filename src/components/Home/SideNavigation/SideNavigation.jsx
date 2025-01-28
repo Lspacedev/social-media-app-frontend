@@ -24,7 +24,9 @@ function SideNavigation() {
     // setLoading(false);
   }, []);
   useEffect(() => {
-    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`);
+    const socket = io.connect(`${import.meta.env.VITE_PROD_URL}`, {
+      transports: ["websocket"],
+    });
     socket.on("notifications-updated", (user) => {
       if (user.id === Number(userId)) {
         setUser(user);
