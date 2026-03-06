@@ -24,7 +24,7 @@ function Landing() {
       if (typeof data.errors !== "undefined") {
         setErrors(data.errors);
       } else {
-        alert(data.message);
+        //alert(data.message);
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
         navigation("/home");
@@ -113,7 +113,7 @@ function Landing() {
             className="guest-signin-btn"
             onClick={() => (loading ? console.log("loading") : guestSignIn())}
           >
-            {loading ? <div>Loading...</div> : <div>Guest sign in</div>}
+            {loading ? <div> Loading.... </div> : <div>Guest sign in</div>}
           </button>
         </div>
       </div>
